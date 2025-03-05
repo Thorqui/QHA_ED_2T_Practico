@@ -28,10 +28,15 @@ class BibliotecaTest {
 
     @Test
     void getLibros() {
+        assertTrue(biblioteca.getLibros().isEmpty());
+        biblioteca.agregarLibro(libro);
+        assertEquals(1, biblioteca.getLibros().size());
     }
 
     @Test
     void encuentraLibroPorTitulo() {
+        biblioteca.agregarLibro(libro);
+        assertEquals(libro, biblioteca.encuentraLibroPorTitulo("Renacido"));
     }
 
     @Test
